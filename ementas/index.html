@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<meta charset="UTF-8">
+
+
+<html>
+
+<head>
+    <style>
+        body {
+            padding: 30px;
+        }
+
+        p {
+            font-size: 20px;
+        }
+
+        h3 {
+            font-size: 24px;
+        }
+
+        h2 {
+            font-size: 28px;
+        }
+
+        h1 {
+            font-size: 32px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #3182BD;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+
+        .SEGM {
+            grid-column: HSEGM / span 1;
+        }
+
+        .TERM {
+            grid-column: HTERM / span 1;
+        }
+
+        .QUAM {
+            grid-column: HQUAM / span 1;
+        }
+
+        .QUIM {
+            grid-column: HQUIM / span 1;
+        }
+
+        .SEXM {
+            grid-column: HSEXM / span 1;
+        }
+
+        .SEGT {
+            grid-column: HSEGT / span 1;
+        }
+
+        .TERT {
+            grid-column: HTERT / span 1;
+        }
+
+        .QUAT {
+            grid-column: HQUAT / span 1;
+        }
+
+        .QUIT {
+            grid-column: HQUIT / span 1;
+        }
+
+        .SEXT {
+            grid-column: HSEXT / span 1;
+        }
+
+        .HHEADS {
+            grid-column: HEADS / span 1;
+            text-align: center;
+        }
+
+        .HHEADT {
+            grid-column: HEADT / span 1;
+            text-align: center;
+        }
+
+        .HHEADQUA {
+            grid-column: HEADQUA / span 1;
+            text-align: center;
+        }
+
+        .HHEADQUI {
+            grid-column: HEADQUI / span 1;
+            text-align: center;
+        }
+
+        .HHEADSEX {
+            grid-column: HEADSEX / span 1;
+            text-align: center;
+        }
+
+        .HINFOM {
+            text-align: center;
+            grid-column: INFOM / span 1;
+            padding-right: 10px;
+        }
+
+        .HINFOT {
+            text-align: center;
+            grid-column: INFOT / span 1;
+            padding-right: 10px;
+        }
+
+        .headinfo {
+            text-align: center;
+            padding-right: 20px;
+        }
+
+        .nulo {
+            height: 1px;
+            background-color: #dddddd;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .nuloB {
+            height: 1px;
+            background-color: #dddddd;
+            margin-top: 3px;
+            margin-bottom: 10px;
+        }
+
+
+        .horariograde {
+            display: grid;
+            width: 100%;
+            gap: 0 0;
+            grid-template-columns: 50px 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            grid-template-areas:
+                "HEADINFO HEADS HEADT HEADQUA HEADQUI HEADSEX"
+                "linha1I linha1Se linha1te linha1Qua linha1Qui linha1Sex"
+                "INFOM HSEGM HTERM HQUAM HQUIM HSEXM"
+                "linha2I linha2Se linha2te linha2Qua linha2Qui linha2Sex"
+                "INFOT HSEGT HTERT HQUAT HQUIT HSEXT";
+        }
+
+
+
+
+        .componentelink {
+            display: inline-block;
+            width: calc(100% - 1.4vw - 20px);
+            height: 170px;
+            margin: 0 !important;
+            padding: 10px;
+            margin-bottom: 5px;
+            overflow: hidden;
+            text-decoration: none !important;
+            transition: all .2s ease-in;
+        }
+
+        .componentelink:hover {
+            display: inline-block;
+            width: calc(100% - 1.4vw - 20px);
+            text-decoration: none !important;
+            transition: all .2s ease-in;
+
+        }
+
+        .vgrafEF {
+            fill: #c4c2c2;
+        }
+
+        .vgrafES {
+            fill: #a5c498;
+        }
+
+        .vgrafEE {
+            fill: #96b2df;
+        }
+
+        .vgrafET {
+            fill: #e27b7d;
+        }
+
+        .vgrafET {
+            fill: #d68d8e;
+        }
+
+        .vgrafEC {
+            fill: #e4b787;
+        }
+
+
+        .vgrafblock {
+            display: inline-block;
+            margin-bottom: 5px;
+            vertical-align: top;
+        }
+
+        .basicvgraf {
+            fill: #888888;
+        }
+
+        .eixoF {
+            background-color: #E0E0E0;
+        }
+
+        .eixoS {
+            background-color: #BDDCB0;
+        }
+
+        .eixoE {
+            background-color: #A7C4F2;
+        }
+
+        .eixoT {
+            background-color: #EAA1A2;
+        }
+
+        .eixoC {
+            background-color: #F9D0A3;
+        }
+
+
+
+        .componentelink.eixoF {
+            border: 0.7vw solid white;
+        }
+
+        .componentelink.eixoF:hover {
+            border: 0.7vw solid #c4c2c2;
+            background-color: #c4c2c2;
+        }
+
+        .componentelink.eixoS {
+            border: 0.7vw solid white;
+        }
+
+        .componentelink.eixoS:hover {
+            border: 0.7vw solid #a5c498;
+            background-color: #a5c498;
+        }
+
+        .componentelink.eixoE {
+            border: 0.7vw solid white;
+        }
+
+        .componentelink.eixoE:hover {
+            border: 0.7vw solid #96b2df;
+            background-color: #96b2df;
+        }
+
+        .componentelink.eixoT {
+            border: 0.7vw solid white;
+        }
+
+        .componentelink.eixoT:hover {
+            border: 0.7vw solid #d68d8e;
+            background-color: #d68d8e;
+        }
+
+        .componentelink.eixoC {
+            border: 0.7vw solid white;
+        }
+
+        .componentelink.eixoC:hover {
+            border: 0.7vw solid #e4b787;
+            background-color: #e4b787;
+        }
+
+        .componentenivel {
+            color: black;
+            float: right;
+            margin-right: -65px;
+        }
+
+        .bigletra {
+            float: right;
+            width: 1px;
+            height: 1px;
+            background-color: transparent;
+            color: #FFFFFF88;
+            font-size: 130px;
+            font-weight: bolder;
+            margin-right: 70px;
+            margin-top: 40px;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        .componentelink span.componentecodigo {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 16px !important;
+            color: black;
+            margin-bottom: 4px;
+        }
+
+        .componentelink span.componentenome {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 18px !important;
+            font-weight: bolder;
+            color: black;
+            padding: 0;
+            margin: 0;
+            padding-bottom: 10px;
+        }
+
+        .componentelink span.componenteprofessor {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 16px !important;
+            color: black;
+            padding: 0;
+            margin: 0;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div id="observablehq-abertura-095206c1"></div>
+    <div id="observablehq-viewof-filtros-095206c1"></div>
+    <div id="observablehq-perfil-095206c1"></div>
+    <div id="observablehq-relacaodedisciplinas-095206c1"></div>
+    <div id="observablehq-instrucoes-095206c1"></div>
+    <hr
+        style='border:0 none transparent; background-color: transparent; height: 1px; border-bottom: 1px solid #c6c6c6;'>
+    </hr>
+    <div id="observablehq-titulocalendario-095206c1"></div>
+    <div id="observablehq-tabelacalendario-095206c1"></div>
+    <div id="observablehq-titulograde-095206c1"></div>
+    <div id="observablehq-graderender-095206c1"></div>
+    <div id="observablehq-parametros-095206c1"></div>
+
+
+    <script type="module">
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/@ranoya/planejamento-da-graduacao-ddesign.js?v=3";
+new Runtime().module(define, name => {
+  if (name === "abertura") return new Inspector(document.querySelector("#observablehq-abertura-095206c1"));
+  if (name === "viewof filtros") return new Inspector(document.querySelector("#observablehq-viewof-filtros-095206c1"));
+  if (name === "relacaodedisciplinas") return new Inspector(document.querySelector("#observablehq-relacaodedisciplinas-095206c1"));
+  if (name === "instrucoes") return new Inspector(document.querySelector("#observablehq-instrucoes-095206c1"));
+  if (name === "perfil") return new Inspector(document.querySelector("#observablehq-perfil-095206c1"));
+  if (name === "titulocalendario") return new Inspector(document.querySelector("#observablehq-titulocalendario-095206c1"));
+  if (name === "tabelacalendario") return new Inspector(document.querySelector("#observablehq-tabelacalendario-095206c1"));
+  if (name === "titulograde") return new Inspector(document.querySelector("#observablehq-titulograde-095206c1"));
+  if (name === "graderender") return new Inspector(document.querySelector("#observablehq-graderender-095206c1"));
+  if (name === "parametros") return new Inspector(document.querySelector("#observablehq-parametros-095206c1"));
+  return ["viewof filtra","viewof disciplinaspupdate"].includes(name);
+});
+</script>
+
+
+
+</body>
+
+</html>

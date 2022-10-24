@@ -1,0 +1,40 @@
+{
+    "start": {
+        "beginindex": "perguntalivre",
+        "tryagainmessage": [
+            "Me desculpe, não entendi sua resposta.",
+            "Não fui capaz de interpretar sua resposta."
+        ]
+    },
+    "intentions": {
+        "e(.*)voce": "sobre-sam"
+    },
+    "tracks": {
+        "sobre-sam": {
+            "action": "message",
+            "text": [
+                "Muito prazer. Eu sou a ferramenta de inteligência artificial incluída no documento para ajudá-lo."
+            ],
+            "goto": "perguntalivre",
+            "reaction": "natural"
+        },
+        "perguntalivre": {
+            "action": "openquestion",
+            "text": [
+                "<b>Como posso lhe ajudar?</b>",
+                "<b>O que posso fazer por você?</b>",
+                "<b>Há algo em que posso ajudar?</b>",
+                "<b>O que você deseja?</b>"
+            ]
+        }
+    },
+    "models": {},
+    "extract": {},
+    "fail-intentions": {
+        "text": [
+            "Desculpe, eu ainda estou aprendendo e não fui capaz de entender sua pergunta. Talvez eu ainda não tenha como entender.",
+            "Me desculpe. Ainda não consigo entender o que você precisa.",
+            "Eu não fui capaz de entender. Acho que não estou preparado para interpretar sua pergunta."
+        ]
+    }
+}

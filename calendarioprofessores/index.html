@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<meta char="UTF-8">
+
+<html>
+
+<head>
+    <style>
+        body {
+            margin: 30px;
+        }
+
+        a {
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        #observablehq-pesquisa form {
+            width: 320px;
+            float: right;
+        }
+
+        .complistacalendario {
+            display: grid;
+            grid-template-columns: 120px 180px 1fr 150px;
+        }
+
+        @media screen and (max-width: 650px) {
+
+            .complistacalendario {
+                grid-template-columns: 120px 1fr 10px;
+            }
+
+            .botcalendario {
+                display: none;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <div id="observablehq-pesquisa"></div>
+    <div id="observablehq-titulo-95c72cb7"></div>
+    <br>
+    <div id="observablehq-boco_calendario_completo_alunos-95c72cb7"></div>
+
+
+
+    <script type="module">
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/@ranoya/calendario-graduacao.js?v=3";
+new Runtime().module(define, name => {
+  if (name === "viewof qualperiodo") return new
+  Inspector(document.querySelector("#observablehq-pesquisa"));
+  if (name === "boco_calendario_completo_professores") return new
+  Inspector(document.querySelector("#observablehq-boco_calendario_completo_alunos-95c72cb7"));
+  if (name === "tituloprofessores") return new Inspector(document.querySelector("#observablehq-titulo-95c72cb7"));
+});
+</script>
+
+</body>
+
+</html>

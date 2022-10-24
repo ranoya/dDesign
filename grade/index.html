@@ -1,0 +1,569 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta char="UTF-8">
+    <meta http-equiv="cache-control" content="no-cache" />
+    <meta http-equiv="pragma" content="no-cache" />
+    <title>Grade de disciplinas, dDesign</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="generator" content="artesanal" />
+    <meta name="description"
+        content="Grade com as componentes curriculares do semestre no Departamento de Design (dDesign) da Universidade Federal de Pernambuco (UFPE)">
+    <meta property="og:description"
+        content="Grade com as componentes curriculares do semestre no Departamento de Design (dDesign) da Universidade Federal de Pernambuco (UFPE)">
+    <meta name="keywords" content="grade, disciplinas, grupos de estudo, componentes curriculares">
+    <meta name="author" content="Guilherme Ranoya">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+    <meta property="og:type" content="website">
+    <meta property="og:locale" content="pt_BR">
+    <meta property="og:image:width" content="600">
+    <meta property="og:image:height" content="600">
+    <meta property="og:site_name" content="ranoya.com">
+    <meta property="og:image:type" content="image/jpeg">
+
+    <meta property="og:image" content="https://www.ranoya.com/Assets/coverimages/grade600.jpg" />
+    <meta property="og:image:secure_url" content="https://www.ranoya.com/Assets/coverimages/grade600.jpg">
+    <link rel="image_src" type="image/jpg" href="https://www.ranoya.com/Assets/coverimages/grade600.jpg" />
+
+    <link rel="icon" type="image/png" href="https://www.ranoya.com/Assets/coverimages/grade16.png">
+    <link rel="shortcut icon" href="https://www.ranoya.com/Assets/coverimages/grade57.png" />
+    <link rel="apple-touch-icon" href="https://www.ranoya.com/Assets/coverimages/grade57.png" />
+    <link rel="apple-touch-icon" sizes="72x72" href="https://www.ranoya.com/Assets/coverimages/grade72.png" />
+    <link rel="apple-touch-icon" sizes="114x114" href="https://www.ranoya.com/Assets/coverimages/grade114.png" />
+    <link rel="apple-touch-icon" sizes="144x144" href="https://www.ranoya.com/Assets/coverimages/grade144.png" />
+
+
+    <meta name="pinterest" content="nopin" description="Sorry, you can't save from my website!" />
+    <meta name="theme-color" content="white">
+    <meta name="msapplication-navbutton-color" content="white">
+    <meta name="apple-mobile-web-app-status-bar-style" content="white">
+
+
+    <style>
+        body {
+            margin: 20px;
+            margin-bottom: 20px;
+        }
+
+        #observablehq-viewof-filtro {
+            width: 370px;
+            float: left;
+            margin-bottom: 15px;
+        }
+
+        #observablehq-resultadosfiltrados-47d7d58d {
+            width: calc(100% - 450px);
+            float: left;
+            margin-bottom: 15px;
+        }
+
+        #observablehq-resultadosfiltrados-47d7d58d span {
+            line-height: 27px;
+            color: #999999;
+        }
+
+        #observablehq-perfildoprofessor-db9534ca {
+            display: inline-block;
+            clear: both;
+        }
+
+        #observablehq-perfildoprofessor-db9534ca a {
+            text-decoration: none;
+            color: #5f87df;
+        }
+
+        #observablehq-perfildoprofessor-db9534ca a:hover {
+            text-decoration: underline;
+            color: #5f87df;
+        }
+
+        #observablehq-perfildoprofessor-db9534ca h4 {
+            margin: 0;
+            padding: 0;
+            margin-bottom: 10px;
+        }
+
+        #observablehq-perfildoprofessor-db9534ca h2 {
+            margin-bottom: 0px;
+        }
+
+        #observablehq-perfildoprofessor-db9534ca h3 {
+            margin: 0;
+            padding: 0;
+        }
+
+
+        .sembutton {
+            width: 40px;
+            height: 22px;
+            margin-right: 8px;
+            background-color: grey;
+            color: white;
+            font-weight: bolder;
+            font-size: 16px;
+            line-height: 22px;
+            text-align: center;
+            display: inline-block;
+            cursor: pointer;
+        }
+
+        .sembutton:hover {
+            background-color: black;
+            cursor: pointer;
+
+        }
+
+        .fullbutton {
+            width: 100%;
+            height: 22px;
+            margin-bottom: 8px;
+            cursor: pointer;
+        }
+
+        .fullbutton .label {
+            width: 140px;
+            color: grey;
+            font-size: 18px;
+            line-height: 22px;
+            float: left;
+            text-align: right;
+            padding-right: 15px;
+            cursor: pointer;
+        }
+
+        .fullbutton:hover .label {
+            color: black;
+            cursor: pointer;
+        }
+
+        .fullbutton .bar {
+            height: 22px;
+            background-color: grey;
+            color: white;
+            font-weight: bolder;
+            font-size: 16px;
+            line-height: 22px;
+            text-align: right;
+            padding-right: 10px;
+            float: left;
+            cursor: pointer;
+        }
+
+        .fullbutton:hover .bar {
+            background-color: black;
+            cursor: pointer;
+        }
+
+
+        .SEGM {
+            grid-column: HSEGM / span 1;
+        }
+
+        .TERM {
+            grid-column: HTERM / span 1;
+        }
+
+        .QUAM {
+            grid-column: HQUAM / span 1;
+        }
+
+        .QUIM {
+            grid-column: HQUIM / span 1;
+        }
+
+        .SEXM {
+            grid-column: HSEXM / span 1;
+        }
+
+        .SEGT {
+            grid-column: HSEGT / span 1;
+        }
+
+        .TERT {
+            grid-column: HTERT / span 1;
+        }
+
+        .QUAT {
+            grid-column: HQUAT / span 1;
+        }
+
+        .QUIT {
+            grid-column: HQUIT / span 1;
+        }
+
+        .SEXT {
+            grid-column: HSEXT / span 1;
+        }
+
+        .HHEADS {
+            grid-column: HEADS / span 1;
+            text-align: center;
+        }
+
+        .HHEADT {
+            grid-column: HEADT / span 1;
+            text-align: center;
+        }
+
+        .HHEADQUA {
+            grid-column: HEADQUA / span 1;
+            text-align: center;
+        }
+
+        .HHEADQUI {
+            grid-column: HEADQUI / span 1;
+            text-align: center;
+        }
+
+        .HHEADSEX {
+            grid-column: HEADSEX / span 1;
+            text-align: center;
+        }
+
+        .HINFOM {
+            text-align: center;
+            grid-column: INFOM / span 1;
+            padding-right: 10px;
+        }
+
+        .HINFOT {
+            text-align: center;
+            grid-column: INFOT / span 1;
+            padding-right: 10px;
+        }
+
+        .headinfo {
+            text-align: center;
+            padding-right: 20px;
+        }
+
+        .nulo {
+            height: 1px;
+            background-color: #dddddd;
+            margin-top: 10px;
+            margin-bottom: 10px;
+        }
+
+        .nuloB {
+            height: 1px;
+            background-color: #dddddd;
+            margin-top: 3px;
+            margin-bottom: 10px;
+        }
+
+        .horariograde {
+            display: grid;
+            width: 100%;
+            gap: 0 0;
+            grid-template-columns: 50px 1fr 1fr 1fr 1fr 1fr;
+            grid-template-rows: auto;
+            grid-template-areas:
+                "HEADINFO HEADS HEADT HEADQUA HEADQUI HEADSEX"
+                "linha1I linha1Se linha1te linha1Qua linha1Qui linha1Sex"
+                "INFOM HSEGM HTERM HQUAM HQUIM HSEXM"
+                "linha2I linha2Se linha2te linha2Qua linha2Qui linha2Sex"
+                "INFOT HSEGT HTERT HQUAT HQUIT HSEXT";
+        }
+
+
+
+
+        .componentelink {
+            display: inline-block;
+            width: calc(100% - 1.4vw - 20px);
+            height: 170px;
+            margin: 0 !important;
+            padding: 10px;
+            margin-bottom: 5px;
+            overflow: hidden;
+            text-decoration: none !important;
+            transition: all .2s ease-in;
+        }
+
+        .componentelink:hover {
+            display: inline-block;
+            width: calc(100% - 1.4vw - 20px);
+            text-decoration: none !important;
+            transition: all .2s ease-in;
+
+        }
+
+        .vgrafblock {
+            display: inline-block;
+            margin-bottom: 5px;
+            vertical-align: top;
+        }
+
+        .basicvgraf {
+            fill: #969696;
+        }
+
+        .basicvgraf:hover {
+            fill: #969696;
+        }
+
+        .eixoF {
+            background-color: #E0E0E0;
+        }
+
+        .eixoS {
+            background-color: #BDDCB0;
+        }
+
+        .eixoE {
+            background-color: #A7C4F2;
+        }
+
+        .eixoT {
+            background-color: #EAA1A2;
+        }
+
+        .eixoC {
+            background-color: #F9D0A3;
+        }
+
+        .componentelink.eixoF {
+            border: 0.7vw solid white;
+        }
+
+        .componentelink.eixoF:hover {
+            border: 0.7vw solid #c4c2c2;
+            background-color: #c4c2c2;
+        }
+
+        .componentelink.eixoS {
+            border: 0.7vw solid white;
+        }
+
+        .componentelink.eixoS:hover {
+            border: 0.7vw solid #a5c498;
+            background-color: #a5c498;
+        }
+
+        .componentelink.eixoE {
+            border: 0.7vw solid white;
+        }
+
+        .componentelink.eixoE:hover {
+            border: 0.7vw solid #96b2df;
+            background-color: #96b2df;
+        }
+
+        .componentelink.eixoT {
+            border: 0.7vw solid white;
+        }
+
+        .componentelink.eixoT:hover {
+            border: 0.7vw solid #d68d8e;
+            background-color: #d68d8e;
+        }
+
+        .componentelink.eixoC {
+            border: 0.7vw solid white;
+        }
+
+        .componentelink.eixoC:hover {
+            border: 0.7vw solid #e4b787;
+            background-color: #e4b787;
+        }
+
+        .componentenivel {
+            color: black;
+            float: right;
+            margin-right: -65px;
+        }
+
+        .bigletra {
+            float: right;
+            width: 1px;
+            height: 1px;
+            background-color: transparent;
+            color: #FFFFFF88;
+            font-size: 130px;
+            font-weight: bolder;
+            margin-right: 70px;
+            margin-top: 40px;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        .componentelink span.componentecodigo {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 16px !important;
+            color: black;
+            margin-bottom: 4px;
+        }
+
+        .componentelink span.componentenome {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 18px !important;
+            font-weight: bolder;
+            color: black;
+            padding: 0;
+            margin: 0;
+            padding-bottom: 10px;
+        }
+
+        .componentelink span.componenteprofessor {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 16px !important;
+            color: black;
+            padding: 0;
+            margin: 0;
+        }
+
+        .conhecimentosprevios {
+            background-color: #c6c6c6;
+            color: white;
+            padding: 10px;
+        }
+
+        .headertable {
+            font-size: 12px;
+            text-transform: uppercase;
+            line-height: 14px;
+            border-bottom: 1px solid #c6c6c6;
+        }
+
+        #legendas {
+            display: inline-flex;
+            display: none;
+            font-size: 10px;
+            line-height: 10px;
+            color: #aaaaaa;
+            text-transform: uppercase;
+            align-items: center;
+            width: 50%;
+        }
+
+        .bola {
+            border-radius: 5px;
+            margin-right: 5px;
+            margin-left: 15px;
+            padding: 5px;
+        }
+
+        #signature {
+            height: 16px;
+            cursor: pointer;
+            margin-right: 10px;
+        }
+
+        #signature path {
+            fill: #aaaaaa;
+            cursor: pointer;
+        }
+
+        #signature:hover path {
+            fill: #FF005C;
+            cursor: pointer;
+        }
+
+        @media print {
+
+            #observablehq-viewof-filtro {
+                display: none;
+
+            }
+
+            #observablehq-resultadosfiltrados-47d7d58d {
+                display: none;
+            }
+
+            #observablehq-perfildoprofessor-db9534ca {
+                display: none;
+            }
+
+            #observablehq-parametros-47d7d58d {
+
+                break-inside: avoid-page !important;
+            }
+
+            .componentelink {
+                border: 1px solid black !important;
+                break-inside: avoid-page !important;
+                margin-bottom: 10px;
+                orphans: 7;
+            }
+
+            .horariograde {
+                gap: 20px 0 !important;
+            }
+
+            .HINFOT,
+            .SEGT,
+            .TERT,
+            .QUAT,
+            .QUIT,
+            .SEXT {
+                page-break-before: always !important;
+            }
+
+            .nuloB {
+                page-break-after: always !important;
+                height: 230px !important;
+                background-color: white;
+
+            }
+
+            .componentelink span.componenteprofessor {
+                font-size: 11px;
+                line-height: 12px !important;
+            }
+
+            .componentelink span.componentenome {
+                font-size: 13px;
+                line-height: 14px !important;
+                color: black;
+                padding-bottom: 4px;
+            }
+
+        }
+    </style>
+</head>
+
+
+<body>
+
+
+    <div id="observablehq-viewof-filtro"></div>
+    <div id="observablehq-resultadosfiltrados-47d7d58d"></div>
+    <div id="observablehq-perfildoprofessor-db9534ca"></div>
+    <div id="observablehq-graderender-47d7d58d"></div>
+    <div id="observablehq-detalhesdisciplina-1de52886"></div>
+    <br>
+    <div id="observablehq-parametros-47d7d58d"></div>
+
+    <script type="module">
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/@ranoya/horario-ddesign.js?v=3";
+new Runtime().module(define, name => {
+  if (name === "graderender") return new Inspector(document.querySelector("#observablehq-graderender-47d7d58d"));
+  if (name === "viewof filtros") return new Inspector(document.querySelector("#observablehq-viewof-filtro"));
+  if (name === "perfildoprofessor") return new
+  Inspector(document.querySelector("#observablehq-perfildoprofessor-db9534ca"));
+  if (name === "legendas") return new Inspector(document.querySelector("#observablehq-parametros-47d7d58d"));
+  if (name === "detalhesdisciplina") return new
+  Inspector(document.querySelector("#observablehq-detalhesdisciplina-1de52886"));
+  if (name === "resultadosfiltrados") return new Inspector(document.querySelector("#observablehq-resultadosfiltrados-47d7d58d"));
+  return ["viewof gradeatual","viewof gradecompleta","eixos","dadosrelevantes","niveis","areas","ocorrencia"].includes(name);
+});
+</script>
+
+    <div style="display: block; width: 100%; text-align: right; margin-top: 40px; padding-bottom: 5px;">
+
+        <svg id="signature" viewBox="0 0 719 719" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <a target='_blank' href='https://www.ranoya.com'>
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M719 0H0V719H719V0ZM230.686 183.844H337.371L230.686 535.31H124L230.686 183.844ZM383.351 183.844H381.782L275.097 535.31H381.782L435.91 356.992L490.037 535.31H596.723L490.037 183.844H488.468H383.351Z" />
+            </a>
+        </svg>
+
+    </div>
+
+</body>
+
+</html>

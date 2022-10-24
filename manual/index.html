@@ -1,0 +1,901 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <script src='https://www.ranoya.com/Assets/JSLibs/AutoIndex/indexit.js'></script>
+    <script src="https://www.ranoya.com/hal9000/samcore2.js"></script>
+    <script src="https://www.ranoya.com/dDesign/manual/interface.js"></script>
+
+    <style>
+        body {
+            padding: 0;
+            margin: 80px 40px 100px 40px
+        }
+
+        #corpo a.noshow,
+        #corpo a.exclude {
+            overflow: hidden !important;
+            width: 0 !important;
+            height: 0 !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            display: inline-block;
+        }
+
+        #corpo {
+            width: calc(100% - 400px);
+            text-align: justify;
+        }
+
+        #corpo p {
+            color: #535353;
+            font-size: 20px;
+            line-height: 26px;
+        }
+
+        #corpo h2 {
+            color: #be711e;
+        }
+
+        #corpo a {
+            color: #be711e;
+            padding-left: 6px;
+            padding-right: 6px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            margin-left: -6px;
+            margin-right: -6px;
+            margin-top: -6px;
+            margin-bottom: -6px;
+            text-decoration: none;
+        }
+
+        #corpo a:hover {
+            color: white;
+            background-color: #be711e;
+        }
+
+
+        #logoddesign {
+            position: fixed;
+            width: 340px;
+            right: 50px;
+            top: 80px;
+        }
+
+        #AutoIndex {
+            position: fixed;
+            width: 380px;
+            right: 10px;
+            top: 440px;
+        }
+
+        #AutoIndex a {
+            text-decoration: none;
+            border-left: 5px solid transparent;
+            padding: 5px 13px 5px 8px;
+            transition: border 0.6s ease-in;
+            font-size: 18px;
+            line-height: 26px;
+            color: #ee7f09;
+        }
+
+        #AutoIndex a.anchorOn {
+
+            border-left: 5px solid #e69138;
+            transition: border 0.6s ease-out;
+
+        }
+
+        #AutoIndex a:hover {
+
+            background-color: #e69138;
+            color: white;
+            transition: border 0.6s ease-in;
+        }
+
+        .marcado {
+            background-color: #ffee00;
+        }
+
+        #samdialogbox {
+            position: fixed;
+            z-index: 50;
+            background-color: #e69138;
+            width: 360px;
+            height: calc(100vh - 120px);
+            top: 0;
+            right: -400px;
+            padding: 20px;
+            padding-top: 100px;
+            color: white;
+            transition: all 0.3s ease-in;
+        }
+
+        #sam2 {
+            width: 30px;
+            height: 30px;
+            position: fixed;
+            z-index: 200;
+            top: 20px;
+            right: 20px;
+            background-color: red;
+        }
+
+        @media screen and (max-width: 750px) {
+
+            #AutoIndex {
+                position: static;
+                width: 100%;
+            }
+
+            #logoddesign {
+                position: static;
+                width: 100%;
+            }
+
+            #corpo {
+                width: 100%;
+            }
+
+            #corpo p {
+                width: 100%;
+            }
+
+        }
+
+        @media print {
+
+            #AutoIndex {
+                position: static;
+                width: 48%;
+                float: left;
+                clear: left;
+                margin-bottom: 50px;
+                font-size: 14px;
+
+            }
+
+            #AutoIndex a {
+                font-size: 14px;
+            }
+
+            #logoddesign {
+                position: static;
+                width: 40%;
+                float: right;
+                clear: right;
+                margin-bottom: 25px;
+
+            }
+
+            #corpo {
+                width: 100%;
+            }
+
+            #corpo p {
+                width: 100%;
+                clear: both;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+    <!--
+    <svg id='logoddesign' viewBox="0 0 1709 1709" fill="none" xmlns="http://www.w3.org/2000/svg">
+        <path fill-rule="evenodd" clip-rule="evenodd"
+            d="M1709 798.185L1206.45 507.75V0H0V1709H858.833L628.244 1581.83L1166.47 1256.01L1173.71 1709H1211.49L1202 1253.15L1709 1535.12V1502.35L1219.39 1221.38L1709 940.205V893.701L1203.21 1187.42L1204.63 559.149L1709 849.429V798.185ZM1167.63 1189.87L1166.01 560.767L624.174 874.509L1167.63 1189.87ZM609.617 1535.96L608 906.854L1151.46 1222.21L609.617 1535.96Z"
+            fill="#e69138" />
+    </svg>
+-->
+
+    <div id='corpo'>
+
+        <h1>Manual do Estudante<br>Bacharelado em Design (CAC/UPFE)</h1>
+
+        <svg id='logoddesign' viewBox="0 0 1709 1721" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <path fill-rule="evenodd" clip-rule="evenodd"
+                d="M1709 798.184L1206.45 507.75V0H0V1709H858.832L628.244 1581.83L1166.47 1256.01L1173.71 1709H1211.49L1202 1253.15L1709 1535.12V1502.35L1219.39 1221.38L1709 940.205V893.702L1203.21 1187.42L1204.63 559.15L1709 849.429V798.184ZM1167.63 1189.87L1166.01 560.767L624.174 874.509L1167.63 1189.87ZM609.617 1535.96L608 906.854L1151.46 1222.21L609.617 1535.96Z"
+                fill="#e69138" />
+            <mask id="mask0_1410_2345" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="20" y="20" width="1535"
+                height="1701">
+                <rect x="20" y="20" width="1535" height="1701" fill="#C4C4C4" />
+            </mask>
+            <g mask="url(#mask0_1410_2345)">
+                <path d="M322 1387.5L574 1242.44L574 1532.56L322 1387.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M548 1220.5L296 1365.56L296 1075.44L548 1220.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M548 1553.5L296 1698.56L296 1408.44L548 1553.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M855 1723.5L603 1868.56L603 1578.44L855 1723.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M548 884.5L296 1029.56L296 739.441L548 884.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M322 1052.5L574 907.441L574 1197.56L322 1052.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M860 717.5L608 862.559L608 572.441L860 717.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M634 549.5L886 404.441L886 694.559L634 549.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M548 549.5L296 694.559L296 404.441L548 549.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M322 717.5L574 572.441L574 862.559L322 717.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M860 381.5L608 526.559L608 236.441L860 381.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M634 213.5L886 68.4407L886 358.559L634 213.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M548 213.5L296 358.559L296 68.4408L548 213.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M322 381.5L574 236.441L574 526.559L322 381.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M860 47.5L608 192.559L608 -97.5592L860 47.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M242 47.5L-10 192.559L-10 -97.5592L242 47.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M634 -120.5L886 -265.559L886 24.5592L634 -120.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M548 -120.5L296 24.5593L296 -265.559L548 -120.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M322 47.5L574 -97.5593L574 192.559L322 47.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M7.99999 1553.5L260 1408.44L260 1698.56L7.99999 1553.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M234 1386.5L-18 1531.56L-18 1241.44L234 1386.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M322 1721.5L574 1576.44L574 1866.56L322 1721.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M234 1720.5L-18 1865.56L-18 1575.44L234 1720.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M234 1050.5L-18 1195.56L-18 905.441L234 1050.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M7.99999 1218.5L260 1073.44L260 1363.56L7.99999 1218.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M234 715.5L-18 860.559L-18 570.441L234 715.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M7.99999 883.5L260 738.441L260 1028.56L7.99999 883.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M234 379.5L-18 524.559L-18 234.441L234 379.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M7.99999 547.5L260 402.441L260 692.559L7.99999 547.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M7.99999 213.5L260 68.4407L260 358.559L7.99999 213.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M7.99999 -118.5L260 -263.559L260 26.5592L7.99999 -118.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M1166 549.5L914 694.559L914 404.441L1166 549.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M940 382.5L1192 237.441L1192 527.559L940 382.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M1166 215.5L914 360.559L914 70.4408L1166 215.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M1166 -121.5L914 23.5593L914 -266.559L1166 -121.5Z" fill="white" fill-opacity="0.2" />
+                <path d="M940 48.5L1192 -96.5593L1192 193.559L940 48.5Z" fill="white" fill-opacity="0.2" />
+            </g>
+        </svg>
+
+
+        <div id="AutoIndex"></div>
+
+
+
+        <p>Documento elaborado pelo <a href='#colegiadograduacao'>Colegiado</a> da Graduação em Design
+            da Universidade
+            Federal de Pernambuco para orientar
+            alunos
+            recém chegados ao curso, com o intuito de facilitar o entendimento sobre a jornada e as atividades
+            acadêmicas, e
+            os
+            procedimentos e ações que são necessárias ao aluno junto ao departamento.</p>
+
+
+        <a class='noshow' name='organizacao'>1/ Organização do curso</a>
+        <h2>1/ Organização do curso</h2>
+
+        <p>O curso de Graduação em Design da Universidade Federal de Pernambuco tem um <a
+                href='https://drive.google.com/file/d/1EL6oGtyXd1Q55uheEakWtb9AahnX39UP/preview' target='_blank'>projeto
+                pedagógico (PPC)</a>
+            inovador,
+            que
+            valoriza, sobretudo, o desenvolvimento da autonomia do estudante.</p>
+
+        <p>O curso, diferentemente da maioria dos cursos de design, e dos demais cursos da UFPE, é realizado sem uma
+            grade
+            de
+            disciplinas fixa para cada período cursado; ele é estruturado por um pequeno conjunto de disciplinas
+            obrigatórias
+            (as
+            disciplinas realizadas no primeiro período, as disciplinas de estágio, e as do trabalho de conclusão de
+            curso),
+            e
+            uma
+            grande quantidade de disciplinas que podem ser cursadas em qualquer momento, e na ordem que o estudante
+            julgar
+            adequada
+            para o desenvolvimento de suas competências e habilidades.</p>
+
+        <p>As disciplinas são organizadas em 4 eixos, cada um deles abordando aspectos específicos das
+            competências
+            necessárias
+            ao
+            designer; o aluno deverá concluir e ser aprovado em, pelo menos, 6 disciplinas de cada eixo. Os
+            eixos
+            compreendem as
+            seguintes questões:</p>
+
+        <p>Sociedade é o eixo de disciplinas que abordam os usos dados aos artefatos e as necessidades, problemas
+            e
+            questões
+            presentes no contexto social, que solicitam pela atuação e as respostas dos profissionais da área;</p>
+
+        <p>Estética é o eixo de disciplinas que abordam as atividades e/ou processos utilizados para dar forma,
+            resolver, ou
+            configurar um artefato de design, de maneira adequada e articulada com os devidos processos construtivos e
+            as
+            necessidades de seus usuários.</p>
+
+        <p>Tecnologia é o eixo de disciplinas que abordam os processos construtivos e técnicas de fabricação dos
+            artefatos,
+            conhecimento essencial para que o profissional de design possa prover soluções e configurações plausíveis,
+            sustentáveis
+            e escaláveis, dentro dos limites e capacidades disponíveis.</p>
+
+
+        <p>Ciência é o eixo de disciplinas que abordam o design de forma científica, estudando suas práticas e
+            questões
+            à
+            luz da
+            ciência, propondo experimentos, investigações e análises que estimulem o aperfeiçoamento e desenvolvimento
+            deste
+            campo
+            de atuação.</p>
+
+        <p>O estudante também poderá cursar disciplinas em outros departamentos e cursos, que entrarão automaticamente
+            para
+            seu
+            histórico escolar como parte das <a href='#atc'>atividades complementares</a>, obrigatórias para
+            conclusão
+            do
+            curso
+            e obtenção do título de bacharel em design.</p>
+
+
+
+        <a class='noshow' name='matriculas'>2/ Matrículas e aulas remotas</a>
+        <h2>2/ Matrículas e aulas remotas</h2>
+
+        <p>A cada novo semestre, todos os estudantes do curso, independente do período em que se encontram, têm a
+            oportunidade
+            de
+            escolher entre diversas disciplinas disponíveis que contribuem de forma plural na formação destas
+            competências.
+            As
+            ementas/programas de cada disciplina, disponíveis através do <a
+                href='https://www.ranoya.com/GradeDdesignViz/proximo/' target='_blank'>planejamento de oferta para o
+                semestre
+                seguinte</a>,
+            trazem
+            informações importantes para orientar as escolhas de cada aluno, incluindo os conhecimentos e competências
+            prévias
+            que
+            são necessárias para cursá-las, o nível de maturidade/experiência (fundamental, intermediário ou avançado)
+            que
+            estas
+            componentes se destinam, dentre diversas outras questões pertinentes.</p>
+
+        <p>Uma das questões difíceis que os alunos enfrentam é o ranking. A prioridade de matrículas nos sistemas
+            da
+            UFPE é
+            ranqueada a partir das suas notas. Notas ruins afetam diretamente sua capacidade de se matricular em novas
+            disciplinas,
+            sobretudo naquelas que possuem muitos alunos interessados em cursá-las. A dedicação ao curso e às atividades
+            propostas
+            nas disciplinas cursadas é essencial para que estas situações não causem prejuízo na sua jornada ao longo do
+            curso.
+        </p>
+
+        <p>Os estudantes não podem ficar sem matrícula em ao menos 1 (uma) disciplina por semestre, ou perderão o
+            vínculo
+            com a
+            universidade (tendo que, no futuro, entrar com um processo para ser reintegrado). Caso seja necessário, por
+            qualquer
+            motivo, se ausentar da universidade por tempo indeterminado, o aluno deverá solicitar o trancamento de
+            matrícula.
+        </p>
+
+
+        <a class='noshow' name='estagio'>3/ Estágio supervisionado</a>
+        <h2>3/ Estágio supervisionado</h2>
+
+        <p>O estudante de design da UFPE pode realizar estágios na área a partir do 4º período do curso. Antes disso,
+            somente
+            com
+            autorização prévia do <a href='#colegiadograduacao'>colegiado</a>, realizada através de uma análise deste
+            órgão, que é feita caso-a-caso e sem
+            um
+            prazo
+            estabelecido para resposta.</p>
+
+        <p>Há 2 modalidades de estágio, definidas pela Lei 11.788: o estágio obrigatório, e o estágio
+            não-obrigatório.
+        </p>
+
+        <p>Estágio obrigatório é aquele que o aluno precisa necessariamente realizar para poder concluir sua
+            graduação.
+            No
+            bacharelado de design da UFPE, o estudante precisa cumprir 480h de estágio obrigatório divididas em
+            um
+            período
+            de 1
+            ano,
+            enquanto matriculado nas disciplinas obrigatórias de Estágio Supervisionado 1, e Estágio Supervisionado 2 do
+            curso,
+            cada
+            uma de 240h de carga horária, e realizadas em semestres separados.</p>
+
+        <p>Estágio não-obrigatório é aquele que o aluno não tem obrigação de realizar para se formar, mas pode
+            fazer se
+            assim
+            desejar, sobretudo para adquirir experiência. As horas de estágio não-obrigatório são incorporadas
+            como
+            <a href='#atc'>atividades complementares</a>.</p>
+
+        <p>Um estágio é uma relação de trabalho especial, regulada por uma Lei federal. Não é qualquer situação ou
+            atividade
+            realizada por um aluno que pode ser considerada um estágio. Para configurar uma relação de estágio são
+            necessários:
+        </p>
+
+        <p>1 Um contrato ou termo de compromisso (TCE) firmado entre a empresa oferecendo o estágio, a
+            universidade, e o
+            aluno,
+            todos com parâmetros corretos e assinados;</p>
+
+        <p>2 Um supervisor responsável na empresa oferecendo o estágio, que acompanhará o estudante em suas
+            atividades
+            realizadas
+            lá (e que assina o contrato ou termo de compromisso);</p>
+
+
+        <p>3 Um professor orientador na universidade que poderá dar o suporte e as orientações necessárias para
+            que este
+            aluno
+            entenda suas obrigações e seu papel no estágio (e que assina um plano de atividades proposto pela empresa
+            oferecendo
+            o
+            estágio, que garanta que as atividades do estagiário são compatíveis com a área do estudante, e compatíveis
+            com
+            um
+            estágio).</p>
+
+        <p>Também de acordo com o que define a Lei 11.780, é obrigatório que sejam apresentados à universidade,
+            relatórios de estágio (no máximo) a cada 6 meses a contar do início das atividades, contendo a
+            avaliação de desempenho do
+            estagiário
+            feita pelo seu supervisor, e das atividades realizadas no estágio feitas pelo próprio estagiário. A
+            ausência
+            destes
+            documentos encerra automática e imediatamente a relação de estágio, e tudo aquilo que decorrer em termos
+            de
+            trabalho
+            adiante, não pode mais ser qualificado como um estágio.</p>
+
+        <p>É importante frisar que estas relações são regidas por Lei, e não pela universidade, pelo <a
+                href='#colegiadograduacao'>colegiado</a>, ou por
+            seus
+            professores, e nesse sentido, as obrigações e normas são obedecidas de forma rigorosa, sem qualquer
+            possibilidade de
+            discussão ou questionamento pelo <a href='#colegiadograduacao'>colegiado</a> de curso.</p>
+
+        <p>Os Agentes Integradores são empresas especializadas que facilitam a procura de vagas de estágio, e
+            intermediam o
+            processo burocrático entre a empresa e o estudante. Na presença de um Agente Integrador, o
+            contrato ou termo
+            de
+            compromisso de estágio (TCE) contará com mais um envolvido, portanto, mais uma instituição que
+            assinará o
+            documento
+            e
+            que terá obrigações e compromissos para qualificar a relação de trabalho como um estágio.</p>
+
+        <p>Todo o processo para elaboração e assinatura de contratos ou termos de compromisso de estágio (TCE), e
+            também
+            para o
+            plano de atividades do estagiário, possuem tempos e demandas específicas de cada um dos envolvidos.
+            Este é
+            um
+            processo
+            bastante complexo, com várias etapas, e que muitas vezes acaba produzindo diversas idas e vindas de
+            documentos,
+            exigindo
+            atenção aos detalhes e na leitura de todos os documentos para evitar que os documentos precisem ser
+            refeitos
+            e
+            re-enviados diversas vezes.</p>
+
+        <p>A universidade não determina tempos e prazos de resposta para Agentes Integradores e empresas, assim
+            como
+            estas
+            também
+            não regulam nem determinam prazos para as respostas da universidade. Cada contrato ou termo de
+            compromisso
+            de
+            estágio
+            (TCE) precisa ser analisado pelo coordenador de estágio do departamento, e cada plano de atividade
+            de
+            estágio
+            precisa
+            ser analisado por um professor orientador. Este procedimento não é instantâneo nem sequer automatizado, e
+            não
+            acontece
+            em função da urgência do estudante. Os prazos da coordenação de estágios para responder às solicitações de
+            assinatura de
+            contratos ou termos de compromisso de estágio (TCE) são de 1 semana, sejam elas com a
+            assinatura, ou com uma
+            resposta
+            negativa decorrente de erros ou problemas presentes no contrato que precisam ser corrigidos.</p>
+
+        <p>Também é necessário frisar que nenhum estágio pode ser iniciado antes do contrato ou termo de compromisso
+            de
+            estágio
+            (TCE) ser assinado e recebido por todos os envolvidos, estando todos em acordo quanto a seus deveres
+            e
+            direitos.
+        </p>
+
+
+        <a class='noshow' name='atc'>4/ Atividades Complementares</a>
+        <h2>4/ Atividades Complementares</h2>
+
+        <p>Para se formar, o aluno precisará concluir, no mínimo, 480 horas de atividades complementares ao longo
+            do
+            curso.
+            Atividades complementares são as atividades formativas realizadas para "além da sala de aula", como uma
+            maneira
+            de
+            ampliar e flexibilizar a construção do saber. As atividades, como norma na UFPE, precisam possuir ao
+            menos
+            16h
+            de
+            duração para que possam ser consideradas pelos cursos.</p>
+
+        <p>Ao realizar uma atividade que se enquadre como atividade complementar, o estudante deverá encaminhá-la (junto
+            ao
+            devido
+            documento de comprovação) através do <a
+                href='https://docs.google.com/forms/d/e/1FAIpQLSf8_G8Or4MEGYen69rv7ylr-l7Mx8B3_XQcjuE8wdgkvDzm8A/viewform'
+                target='_blank'>requerimento eletrônico de atividades complementares</a>.</p>
+
+        <p>As atividades que se qualificam como atividades complementares são:</p>
+
+        <p>Participação em projetos de extensão: ingresso e realização das atividades propostas em um (ou mais)
+            dos
+            inúmeros
+            projetos de extensão oferecidos na universidade;</p>
+
+        <p>Disciplina realizada em outra universidade durante o curso: disciplinas ofertadas por outras
+            universidades e
+            abertas
+            a
+            alunos externos quando não houver disciplinas no curso que possam ser consideradas equivalentes para serem
+            dadas
+            como
+            concluídas;</p>
+
+        <p>Disciplina em mobilidade acadêmica: disciplinas realizadas em cursos no exterior em programas de
+            mobilidade,
+            quando
+            não
+            há disciplinas no curso que possam ser consideradas equivalentes para serem dadas como concluídas;</p>
+
+        <p>Monitoria: atividades realizadas como monitor de disciplina no curso de design ou em outro curso;</p>
+
+        <p>Publicação de artigos em congressos ou periódicos, ou autoria de produção artísticas e/ou culturais:
+            artigos
+            científicos
+            publicados em anais de congressos e/ou revistas científicas, ou obras autorais artísticas e/ou culturais,
+            desde
+            que
+            realizadas de forma autônoma, por iniciativa própria, e sem vínculo com concursos, atividades de trabalho ou
+            eventos;</p>
+
+        <p>Apresentação em eventos acadêmicos: apresentações de trabalhos científicos em congressos, simpósios,
+            encontros,
+            no
+            formato de apresentação oral, posters ou debates, vinculadas, ou não, à artigos publicados, podem ser
+            incorporadas
+            às
+            atividades complementares de forma independente da publicação de artigo (quando houver);</p>
+
+        <p>Participação em eventos acadêmicos ou gerais: participações de eventos de qualquer natureza, sejam
+            congressos,
+            workshops, simpósios, encontros, festivais, hackatons, dentre a grande variedade de eventos existentes,
+            quando
+            houver
+            documento de comprovação com a devida carga horária de participação especificada;</p>
+
+        <p>Organização de evento: o trabalho realizado na organização de eventos acadêmicos ou gerais, quando
+            houver
+            documento
+            de
+            comprovação com a devida carga horária de execução/organização especificada;</p>
+
+        <p>Apresentação em eventos gerais: as apresentações de obras ou trabalhos em exposições, em mostras,
+            galerias,
+            performances, pitchs, dentre outros tipos de eventos permanentes, ou não, onde a produção fique em exposição
+            por
+            tempo
+            determinado;</p>
+
+        <p>Premiações: prêmios, láureas ou menções honrosas recebidas em em festivais, competições, concursos,
+            hackatons,
+            dentre
+            outros eventos, podem ser incorporadas de forma independente das atividades de participação ou publicação
+            (quando
+            houverem);</p>
+
+        <p>Participação em competições ou concursos: participações em competições e/ou concursos na universidade
+            ou
+            externos
+            à
+            ela;</p>
+
+        <p>Cursos internos: cursos realizados na universidade nas suas diversas modalidades (cursos de curta
+            duração,
+            cursos
+            de
+            extensão, cursos de línguas, etc.);</p>
+
+        <p>Cursos externos: cursos realizados fora da universidade nas suas diversas modalidades (treinamento,
+            curso
+            profissionalizante, curso de informática, curso técnico, etc.);</p>
+
+        <p>Programas institucionais: participações de programas oferecidos pela universidade, tais como PIBID,
+            PIBIC,
+            PIBITI,
+            PET,
+            BIA, PIBEX, PIPEX ou participação de Empresa Júnior;</p>
+
+        <p>Representação discente em comissões da universidade: participação como representante do corpo discente
+            em
+            instâncias
+            institucionais como o <a href='#colegiadograduacao'>colegiado</a> de curso, o pleno do departamento, o
+            diretório acadêmico, dentre outros
+            tipos de
+            representação;</p>
+
+        <p>As atividades de estágio não-obrigatório também são incorporadas como atividades complementares,
+            através dos
+            relatórios
+            de estágio apresentados ao professor orientador de estágio, e encaminhados à coordenação de estágios.</p>
+
+        <p>As disciplinas eletivas cursadas na universidade (em outros cursos, ou no próprio curso, quando
+            houver)
+            entram
+            automaticamente como carga horária de atividades complementares, quando não houver disciplina equivalente
+            registrada
+            no
+            curso.</p>
+
+        <p>Todos os alunos podem consultar as horas já concluídas de atividades complementares através do <a
+                href='https://docs.google.com/spreadsheets/d/e/2PACX-1vTtQpncxGpvQX80U_wP1yaBn8AQnyFdsCQLjjhTOzuU1AfddXtcIGrz5_u2HbirPaPcKbzL56yYw2Wd/pubhtml?gid=1693124089&single=true&chrome=false'
+                target='_blank'>relatório
+                geral de
+                atividades complementares</a>.</p>
+
+
+
+
+
+        <a class='noshow' name='monitoria'>5/ Monitoria</a>
+        <h2>5/ Monitoria</h2>
+
+        <p>Todo aluno do curso, quando aprovado em uma disciplina, poderá se candidatar a se tornar monitor desta
+            disciplina
+            em
+            semestres subseqüêntes.</p>
+
+        <p>O monitor tem como atividade auxiliar o professor em diversas tarefas associadas à disciplina, desde
+            conversar
+            com os
+            atuais alunos para reunir dúvidas e questões recorrentes, até a oferecer acompanhamento e/ou suporte técnico
+            às
+            atividades realizadas pelos atuais alunos. Estas atividades serão supervisionadas e estipuladas no plano de
+            atividades
+            do monitor, estabelecido entre ele e o professor da disciplina.</p>
+
+        <p>As atividade de monitoria contribuem na formação acadêmica com o aprofundamento sobre um tópico do qual o
+            aluno
+            apresenta alguma vocação e interesse, e com uma aproximação das atividades docentes para aqueles que têm
+            alguma
+            perspectiva futura em se tornarem professores, uma vez que o curso de bacharelado não possui uma linha de
+            licenciatura.</p>
+
+        <p>O aluno poderá receber bolsa pelas atividades de monitoria, havendo disponibilidade de bolsas oferecidas pela
+            universidade; do contrário, a atividade é feita de forma voluntária.</p>
+
+        <p>As monitorias realizadas podem ser incorporadas como atividades complementares no histórico acadêmico
+            do
+            aluno.
+        </p>
+
+
+        <a class='noshow' name='tcc'>6/ Trabalho de conclusão de curso (TCC)</a>
+        <h2>6/ Trabalho de conclusão de curso (TCC)</h2>
+
+        <p>O trabalho de conclusão de curso é uma atividade obrigatória para todos os alunos da graduação de design,
+            desenvolvido
+            (preferencialmente) no último ano de curso.</p>
+
+        <p>O TCC deve ser realizado individualmente, exceto casos de alta complexidade, mediante solicitação e aprovação
+            do
+            <a href='#colegiadograduacao'>Colegiado</a> do Bacharelado em Design.</p>
+
+        <p>O trabalho deve ser realizado em uma das 2 modalidades disponíveis: teórica (monográfica) ou
+            prática
+            (projeto).
+        </p>
+        <p>
+
+            <p>A carga horária de trabalho do aluno realizando TCC é de 14 horas semanais, e os resultados
+                esperados
+                para o
+                projeto
+                deverão ser compatíveis a um trabalho desenvolvido ao longo de 1 ano com esta dedicação, totalizando
+                570
+                horas
+                de
+                trabalho.</p>
+
+            <p>Para realizar seu TCC, o estudante deverá solicitar a orientação de um professor do departamento, que
+                precisará,
+                obrigatoriamente, ser formalizada através de um termo de compromisso de orientação,
+                regulamentando a
+                relação
+                entre as
+                partes (orientando e orientador), suas obrigações e direitos, conforme descritas no <a
+                    href='https://drive.google.com/file/d/1pOGrvN1hXp-MZSsW8bSOKADwlBKEFoPO/preview'
+                    target='_blank'>documento de
+                    diretrizes</a>.
+            </p>
+
+            <p>Para conclusão, o trabalho precisará ser apresentado para uma banca de avaliação, composta pelo
+                orientador,
+                um
+                professor
+                do departamento, e um avaliador externo.</p>
+
+
+            <a class='noshow' name='projetosinstitucionais'>7/ Participação em projetos institucionais</a>
+            <h2>7/ Participação em projetos institucionais</h2>
+
+            <p>A universidade oferece diversos projetos institucionais dos quais seus alunos podem participar,
+                independente
+                de
+                departamento ou curso ao qual estão vinculados. Tratam-se de projetos de iniciação à docência (PIBID),
+                projetos
+                de
+                iniciação científica (PIBIC), projetos de iniciação tecnológica (PIBITI), programas de educação tutorial
+                (PET),
+                bolsas
+                de incentivo acadêmico (BIA), bolsas de extensão universitária (PIBEX), programas integrados de ensino,
+                pesquisa
+                e
+                extensão (PIPEX), e atuação na empresa júnior.</p>
+
+            <p>A participação nestes projetos, ou em outros que venham a ser criados, se qualificam como atividades
+                complementares
+                (tópico 4). Alguns programas e projetos concedem bolsas de estudos aos estudantes, e outros não,
+                muitas
+                vezes em função
+                da disponibilidade das bolsas.</p>
+
+
+
+
+            <a class='noshow' name='departamento'>8/ Departamento de Design (dDesign)</a>
+            <h2>8/ Departamento de Design (dDesign)</h2>
+
+            <p>O bacharelado de design é um curso oferecido pelo departamento de design, junto a um programa de
+                pós-graduação
+                strictu
+                senso em design (PPGDesign).</p>
+
+            <p>Todos os departamentos da universidade são compostos por unidades ou órgãos, aos quais competem
+                algumas
+                funções para
+                que
+                o departamento e suas atividades funcionem bem.</p>
+
+            <p>O Pleno Departamental é órgão deliberativo do departamento, formado por todos os seus professores e a
+                representação
+                discente da graduação e pós-graduação. Este órgão é o responsável decisório por todas as questões
+                que
+                envolvam o
+                departamento como um todo.</p>
+
+            <p>A Chefia do Departamento é sua contraparte executiva, responsável por colocar em prática as decisões
+                do
+                Pleno
+                Departamental e zelar pelo departamento. Os chefes e sub-chefes são eleitos a cada 2 anos.</p>
+
+            <a name='colegiadograduacao' class='exclude'>colegiadograd</a>
+            <p>Os Colegiados de Curso são os órgãos
+                superiores e
+                deliberativos dos cursos, responsáveis máximos
+                pelos
+                próprios
+                cursos e
+                pelas decisões tomadas em relação a eles. Este órgão é formado por um conjunto reduzido de
+                professores
+                convidados a
+                compô-lo e liderados pelo Coordenador de Curso, e pela representação discente. Há um Colegiado de
+                Graduação, e um
+                Colegiado de Pós-Graduação no departamento de design.</p>
+
+            <p>As Coordenações de Curso são a contraparte executiva dos Colegiados, responsáveis por colocar em
+                prática
+                as decisões
+                e
+                deliberações de seus respectivos Colegiados, e zelar pela boa condução e manutenção dos cursos. Os
+                coordenadores e
+                vice-coordenadores são eleitos a cada 2 anos.</p>
+
+            <p>O Núcleo Docente Estruturante é o órgão responsável por avaliar as necessidades futuras e
+                reformulações
+                necessárias
+                aos
+                cursos. Cabe a este núcleo investigar e propor mudanças para que os cursos não se desatualizem. Ele
+                é
+                composto por um
+                conjunto reduzido de professores, liderados pelo Coordenador de Curso.</p>
+
+            <p>Cada Coordenação de Curso possui uma secretaria associada, a Secretaria de Graduação, e a Secretaria
+                de
+                Pós-Graduação,
+                responsáveis pelo atendimento de alunos, professores e funcionários do departamento, e trâmites
+                necessários.<p>
+
+                    <p>A Coordenação de Estágios é responsável pelas questões relativas aos Estágios (tópico 3 deste
+                        manual), e a Coordenação
+                        de Monitoria, pelas questões relativas às Monitorias (tópico 5 deste manual).</p>
+
+                    <p>O departamento de design faz parte de um centro: O Centro de Artes e Comunicação (CAC) da
+                        UFPE,
+                        do qual fazem parte
+                        diversos outros departamentos igualmente. O departamento de design possui representações
+                        junto
+                        ao centro, que constituem
+                        os diversos conselhos deliberativos dos centros que compõem a universidade. Estas
+                        representações
+                        são feitas por chefes e
+                        coordenadores, e a diretoria dos centros, assim como eles, são eleitas em processo
+                        democrático
+                        junto aos estudantes,
+                        professores e funcionários.</p>
+
+                    <p>Toda esta estrutura existe para que a universidade seja constituída e conduzida de forma
+                        democrática, possibilitando
+                        a
+                        participação e representação de seus atores.</p>
+
+
+
+
+
+                    <a class='noshow' name='da'>9/ Movimento Estudantil</a>
+                    <h2>9/ Movimento Estudantil</h2>
+
+                    <p>O Diretório Acadêmico (DA) é uma organização estudantil integrada por alunos do curso que
+                        unem-se
+                        para defender os
+                        interesses dos estudantes.</p>
+
+                    <p>A participação no DA é voluntária,sem remuneração e é feita por eleição (de chapas)
+                        organizada e
+                        sancionada pelos
+                        próprios estudantes do curso. Algumas das atividades do DA implicam em carga horária
+                        complementar para o aluno-membro.</p>
+
+                    <p>A posse de um Diretório Acadêmico é renovada a cada 1 ano.</p>
+
+    </div>
+
+
+    <div id="samdialogbox">
+        <div id='sam2' onclick="openSam()">
+            <svg viewBox="0 0 78 78" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <rect id='sam2-shine' />
+                <rect id='sam2-interno' />
+                <rect id='sam2-externo' />
+                <rect id='sam2-over' />
+            </svg>
+        </div>
+
+        <div id="pontoatual">
+            Olá, eu sou SAM, inteligência artificial incorporada a esse documento.</div>
+        <input type="text" id="entrada">
+        <div id="notificacao"></div>
+        <div id="dialogbox"></div>
+
+    </div>
+
+    <script>
+        sam.addDialogBox("entrada", "dialogbox", "notificacao");
+        sam.loadscript("https://www.ranoya.com/adriely/samscript.json");
+    </script>
+
+
+</body>
+
+</html>

@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+
+    <style>
+        body {
+            margin: 20px;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 60px;
+        }
+
+        .gridrecursos {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3px 10px;
+        }
+
+        .categoria {
+            grid-column: 1 / Span 2;
+            margin-top: 16px;
+            border-bottom: 1px solid #dddddd;
+            color: #bbbbbb;
+            text-transform: uppercase;
+            font-size: 11px;
+        }
+
+        a {
+            text-decoration: none;
+            color: #34c2c7;
+        }
+
+        a:hover {
+            color: #8b54e2;
+        }
+
+        @media screen and (max-width: 650px) {
+
+            .gridrecursos {
+                grid-template-columns: 1fr;
+            }
+
+            .categoria {
+                grid-column: 1 / Span 1;
+            }
+
+        }
+    </style>
+</head>
+
+<body>
+
+    <h1>Serviços, Ferramentas e Recursos</h1>
+    <p>Departamento de Design (CAC/UFPE)</p>
+    <br><br>
+    <div id="observablehq-viewof-filtro-882b1abf"></div>
+    <br>
+    <b>Recursos organizados por assunto</b><br>
+    <div id="observablehq-listaderecursosportema-882b1abf"></div>
+    <br><br><br>
+    <b>Recursos organizados por tipologia</b><br>
+    <div id="observablehq-listaderecursosportipo-882b1abf"></div>
+
+    <script type="module">
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/@ranoya/recursos-ddesign.js?v=3";
+new Runtime().module(define, name => {
+  if (name === "viewof filtro") return new Inspector(document.querySelector("#observablehq-viewof-filtro-882b1abf"));
+  if (name === "listaderecursosportema") return new Inspector(document.querySelector("#observablehq-listaderecursosportema-882b1abf"));
+  if (name === "listaderecursosportipo") return new Inspector(document.querySelector("#observablehq-listaderecursosportipo-882b1abf"));
+  return ["viewof ferramentasfiltradas","tipos","assuntos","listarecursosporassunto","viewof ferramentasfiltradascoord","tiposcoord","listaderecursosportipocoord","listarecursosportipo","listarecursosportipocoord","assuntoscoord","listaderecursosportemacoord","listarecursosporassuntocoord","viewof ferramentasfiltradasprof","tiposprof","listaderecursosportipoprof","listarecursosportipoprof","assuntosprof","listaderecursosportemaprof","listarecursosporassuntoprof"].includes(name);
+});
+</script>
+
+
+</body>
+
+</html>

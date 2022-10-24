@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta name='viewport' content='width=device-width, initial-scale=1, maximum-scale=1' />
+    <meta http-equiv='X-UA-Compatible' content='IE=edge,chrome=1' />
+    <style>
+        body {
+            margin: 20px;
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 20px;
+            margin-bottom: 60px;
+        }
+
+        a {
+            color: #0db8ec;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .bigletra {
+            float: right;
+            width: 1px;
+            height: 1px;
+            background-color: transparent;
+            color: #FFFFFF88;
+            font-size: 130px;
+            font-weight: bolder;
+            margin-right: 70px;
+            margin-top: 40px;
+            font-family: Helvetica, Arial, sans-serif;
+        }
+
+        .componentelink span.componentecodigo {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 14px;
+            line-height: 16px !important;
+            color: black;
+            margin-bottom: 4px;
+        }
+
+        .componentelink span.componentenome {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 20px;
+            line-height: 24px !important;
+            font-weight: bolder;
+            color: black;
+            padding: 0;
+            margin: 0;
+            padding-bottom: 10px;
+        }
+
+        .componentelink span.componenteprofessor {
+            font-family: Helvetica, Arial, sans-serif;
+            font-size: 16px;
+            line-height: 18px !important;
+            color: black;
+            padding: 0;
+            margin: 0;
+        }
+
+        .conhecimentosprevios {
+            background-color: #c6c6c6;
+            color: white;
+            padding: 10px;
+        }
+
+        .headertable {
+            font-size: 12px;
+            text-transform: uppercase;
+            line-height: 14px;
+            border-bottom: 1px solid #c6c6c6;
+        }
+
+        #legendas {
+            display: inline-flex;
+            font-size: 10px;
+            line-height: 10px;
+            color: #aaaaaa;
+            text-transform: uppercase;
+            align-items: center;
+            width: 50%;
+        }
+
+        .bola {
+            width: 10px;
+            height: 10px;
+            border-radius: 5px;
+            margin-right: 5px;
+            margin-left: 15px;
+        }
+
+        .bolsista {
+            color: #00aa66;
+        }
+
+        .legendabolsista {
+            border-radius: 11px;
+            background-color: #00aa66;
+            width: 22px;
+            height: 22px;
+            vertical-align: middle;
+            float: left;
+            margin-right: 15px;
+        }
+
+        .linkbloco {
+            background-color: #dddddd;
+            color: #0db8ec;
+            text-decoration: none !important;
+            padding: 4px 16px 4px 16px;
+            margin: -16px 4px -16px 0;
+        }
+
+        .linkbloco:hover {
+            background-color: #0db8ec;
+            color: #FFFFFF !important;
+            text-decoration: none !important;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div id="observablehq-titulo-c11b957b"></div>
+    <div id="observablehq-viewof-filtros-c11b957b"></div><br><br>
+    <div id="observablehq-lista1-c11b957b"></div><br>
+    <div id="observablehq-legenda1-c11b957b"></div>
+    <div id="observablehq-perfildoprofessor-c11b957b"></div>
+    <div id="observablehq-detalhesdisciplina-c11b957b"></div><br><br>
+    <div id="observablehq-titulo2-c11b957b"></div>
+    <div id="observablehq-lista2-c11b957b"></div>
+    <div id="observablehq-condicoes-c11b957b"></div>
+    <div id="observablehq-criterios-c11b957b"></div>
+    <div id="observablehq-ferramentas"></div>
+
+
+    <script type="module">
+        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+import define from "https://api.observablehq.com/@ranoya/ddesign-monitoria.js?v=3";
+new Runtime().module(define, name => {
+  if (name === "lista1") return new Inspector(document.querySelector("#observablehq-lista1-c11b957b"));
+  if (name === "titulo") return new Inspector(document.querySelector("#observablehq-titulo-c11b957b"));
+  if (name === "viewof filtros") return new Inspector(document.querySelector("#observablehq-viewof-filtros-c11b957b"));
+  if (name === "legenda1") return new Inspector(document.querySelector("#observablehq-legenda1-c11b957b"));
+  if (name === "perfildoprofessor") return new Inspector(document.querySelector("#observablehq-perfildoprofessor-c11b957b"));
+  if (name === "detalhesdisciplina") return new Inspector(document.querySelector("#observablehq-detalhesdisciplina-c11b957b"));
+  if (name === "titulo2") return new Inspector(document.querySelector("#observablehq-titulo2-c11b957b"));
+  if (name === "lista2") return new Inspector(document.querySelector("#observablehq-lista2-c11b957b"));
+  if (name === "condicoes") return new Inspector(document.querySelector("#observablehq-condicoes-c11b957b"));
+  if (name === "criterios") return new Inspector(document.querySelector("#observablehq-criterios-c11b957b"));
+  if (name === "ferramentas") return new
+  Inspector(document.querySelector("#observablehq-ferramentas"));
+  return ["viewof gradeatual","viewof gradecompleta","eixos","dadosrelevantes","niveis","areas","ocorrencia","viewof listacompletamonitores","viewof localizamonitores"].includes(name);
+});
+</script>
+</body>
+
+</html>
