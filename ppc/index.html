@@ -1,61 +1,80 @@
 <!DOCTYPE html>
 <html>
-
-<head>
-    <meta charset="UTF-8">
+  <head>
+    <meta charset="UTF-8" />
     <style>
-        body {
-            margin: 20px;
-            font-family: Helvetica, Arial, sans-serif;
-            font-size: 16px;
-            line-height: 20px;
-            margin-bottom: 60px;
-        }
+      body {
+        margin: 20px;
+        font-family: Helvetica, Arial, sans-serif;
+        font-size: 16px;
+        line-height: 20px;
+        margin-bottom: 60px;
+      }
 
-        a {
-            text-decoration: none;
-            color: #8da9f7;
-        }
+      a {
+        text-decoration: none;
+        color: #8da9f7;
+      }
 
-        a:hover {
-            color: #8b54e2;
-        }
+      a:hover {
+        color: #8b54e2;
+      }
 
-        #observablehq-viewof-patt-9ec01783 {
-            float: left;
-        }
+      #observablehq-viewof-patt-9ec01783 {
+        float: left;
+      }
 
-        #observablehq-total-9ec01783 {
-            text-align: right;
-        }
+      #observablehq-total-9ec01783 {
+        text-align: right;
+      }
 
-        #observablehq-mapatable-9ec01783 {
-            clear: both;
-            margin-top: 60px;
-        }
+      #observablehq-mapatable-9ec01783 {
+        clear: both;
+        margin-top: 60px;
+      }
     </style>
-</head>
+  </head>
 
-<body>
-
+  <body>
     <h1>Mapa de disciplinas da graduação</h1>
     <p>Departamento de Design (CAC/UFPE)</p>
-    <br><br>
-    <div id="observablehq-viewof-patt-9ec01783"></div>
-    <div id="observablehq-total-9ec01783"></div>
-    <div id="observablehq-mapatable-9ec01783"></div>
+    <br /><br />
+    <div id="observablehq-viewof-patt-d5e2770c"></div>
+    <br /><br />
+    <div id="observablehq-total-d5e2770c"></div>
+    <br /><br />
+    <div id="observablehq-mapatable-d5e2770c"></div>
 
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@observablehq/inspector@3/dist/inspector.css"
+    />
     <script type="module">
-        import {Runtime, Inspector} from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
-import define from "https://api.observablehq.com/@ranoya/planejamentoddesign.js?v=3";
-new Runtime().module(define, name => {
-  if (name === "viewof patt") return new Inspector(document.querySelector("#observablehq-viewof-patt-9ec01783"));
-  if (name === "total") return new Inspector(document.querySelector("#observablehq-total-9ec01783"));
-  if (name === "mapatable") return new Inspector(document.querySelector("#observablehq-mapatable-9ec01783"));
-  return ["viewof filtromapa"].includes(name);
-});
-</script>
-
-</body>
-
+      import {
+        Runtime,
+        Inspector,
+      } from "https://cdn.jsdelivr.net/npm/@observablehq/runtime@4/dist/runtime.js";
+      import define from "https://api.observablehq.com/@ranoya/mapa-graduacao-ddesign.js?v=3";
+      new Runtime().module(define, (name) => {
+        if (name === "viewof patt")
+          return new Inspector(
+            document.querySelector("#observablehq-viewof-patt-d5e2770c")
+          );
+        if (name === "total")
+          return new Inspector(
+            document.querySelector("#observablehq-total-d5e2770c")
+          );
+        if (name === "mapatable")
+          return new Inspector(
+            document.querySelector("#observablehq-mapatable-d5e2770c")
+          );
+        return [
+          "viewof filtromapa",
+          "viewof filtrotodasasofertasok",
+          "codigos",
+          "historicomatriculas",
+        ].includes(name);
+      });
+    </script>
+  </body>
 </html>
