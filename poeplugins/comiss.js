@@ -14,9 +14,15 @@ let comiss = function (par) {
                 separaregistros.push(registroscat[i]);
             }
         }
+
+        console.log("separaregistros");
+        console.table(separaregistros);
         
         
         let categorias = tags(separaregistros, "comissao", ",");
+
+        console.log("categorias");
+        console.table(categorias);
 
         let colunas = "";
         let heads = `<span class="categoriacomis">`;
