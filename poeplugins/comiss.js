@@ -80,7 +80,7 @@ let comiss = function (par) {
 
                 for (let i = 0; i < newarr.length; i++) {
 
-                    if (newarr[i].comissao.toString.match(categorias[c])) {
+                    if (newarr[i].comissao.toString().match(categorias[c])) {
 
                         xpto += newarr[i].professor + "<br>";
 
