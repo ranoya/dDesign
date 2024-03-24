@@ -13,22 +13,13 @@ let comiss = function (par) {
         for (let i = 0; i < registroscat.length; i++) {
             if (typeof registroscat[i] != "undefined" && registroscat[i] != "undefined" && registroscat[i] != "" && registroscat[i] != null) {
 
-                console.log("----");
-                console.log(i + ": " + registroscat[i] + " > " + (typeof registroscat[i] != "undefined" && registroscat[i] != "undefined" && registroscat[i] != "" && registroscat[i] != null))
                 separaregistros[z] = {};
                 separaregistros[z].comissao = registroscat[i];
                 z++;
             }
         }
 
-        console.log("separaregistros");
-        console.table(separaregistros);
-        
-        
         let categorias = tags(separaregistros, "comissao", ",");
-
-        console.log("categorias");
-        console.table(categorias);
 
         let colunas = "";
         let itemheads = `<div class="gridcom">`;
@@ -40,7 +31,7 @@ let comiss = function (par) {
         }
 
         for (let i = 0; i < categorias.length; i++){
-            itemheads += `<div>${categorias[i]}</div>`
+            itemheads += `<div class="ithead">${categorias[i]}</div>`
         }
 
         heads += `</span>`;
@@ -53,6 +44,13 @@ let comiss = function (par) {
             grid-column: 1 / Span ${categorias.length} !important;
             margin-top: 16px;
             border-bottom: 1px solid var(--line-separator, #dddddd);
+            color: var(--text-color, #bbbbbb);
+            text-transform: uppercase;
+            font-size: 11px;
+        }
+
+        .ithead {
+            margin-top: 16px;
             color: var(--text-color, #bbbbbb);
             text-transform: uppercase;
             font-size: 11px;
@@ -82,8 +80,6 @@ let comiss = function (par) {
         ${heads}
         `;
 
-        console.table(newarr);
-
         let patt = "";
 
         for (let c = 0; c < categorias.length; c++) {
@@ -96,9 +92,6 @@ let comiss = function (par) {
                 if (typeof newarr[i].comissao != 'undefined' && newarr[i].comissao != 'undefined' && newarr[i].comissao != null && newarr[i].comissao != '') {
                    
                     patt = String(newarr[i].comissao);
-                    console.log("---");
-                    console.log(patt);
-
                     if (patt.match(categorias[c])) {
 
                         xpto += newarr[i].professor + "<br>";
