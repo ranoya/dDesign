@@ -1,0 +1,79 @@
+let comiss = function (par) {
+
+  fetch(
+    `https://opensheet.elk.sh/1lncqczCIBX0fl9O0XpDt_ogiqQW5iZUKX-kqH6yHNVQ/GRUPOS`
+  )
+    .then((response) => response.json())
+    .then((dados) => {
+        let newarr = select(dados, multipatterncheck_exclude, par);
+        
+        
+        let categorias = tags(newarr, "comissao", ",");
+
+        let colunas = "";
+        let heads = `<span class="categoriacomis">`;
+
+        for (let i = 0; i < categorias.length; i++) {
+            colunas += "1fr ";
+            heads += `${categorias[i]}`;
+        }
+
+        heads += `</span>`;
+
+        let xpto = `
+        <style>
+
+        .categoriacomis {
+            grid-column: 1 / Span ${categorias.length} !important;
+            margin-top: 16px;
+            border-bottom: 1px solid var(--line-separator, #dddddd);
+            color: var(--text-color, #bbbbbb);
+            text-transform: uppercase;
+            font-size: 11px;
+        }
+
+        .gridcom {
+
+            display: grid;
+            grid-template-columns: [init] ${colunas} [ fim ];
+            gap: 3px 10px;
+            width: calc(100vw - 50px);
+            margin-left: 20px;
+            margin-right: 20px;
+            padding-bottom: 20px;
+
+        }
+        </style>
+        
+        <div class="gridcom">
+        
+        ${heads}
+        `;
+
+        
+
+        for (let c = 0; c < categorias.length; c++) {
+            if (typeof categorias[c] != "undefined" && categorias[c] != "" && categorias[c] != null) {
+
+                xpto += `<div>`;
+
+
+                for (let i = 0; i < newarr.length; i++) {
+
+                    if (newarr[i].comissao.toString.match(categorias[c])) {
+
+                        xpto += newarr[i].professor + "<br>";
+
+                    }
+
+                }
+
+                xpto += `</div>`;
+
+            }
+        }
+
+      xpto += `</div>`;
+      present(xpto);
+    });
+};
