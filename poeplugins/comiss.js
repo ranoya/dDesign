@@ -11,7 +11,10 @@ let comiss = function (par) {
         let separaregistros = [];
         for (let i = 0; i < registroscat.length; i++) {
             if (typeof registroscat[i] != "undefined" && registroscat[i] != "" && registroscat[i] != null) {
-                separaregistros[i].push(registroscat[i]);
+
+                console.log("----");
+                console.log(i + ": " + registroscat[i] + " > " + (typeof registroscat[i] != "undefined" && registroscat[i] != "" && registroscat[i] != null))
+                separaregistros.push(registroscat[i]);
             }
         }
 
