@@ -9,12 +9,14 @@ let comiss = function (par) {
 
         let registroscat = unique(newarr, "comissao");
         let separaregistros = [];
+        let z = 0;
         for (let i = 0; i < registroscat.length; i++) {
-            if (typeof registroscat[i] != "undefined" && registroscat[i] != "" && registroscat[i] != null) {
+            if (typeof registroscat[i] != "undefined" && registroscat[i] != "undefined" && registroscat[i] != "" && registroscat[i] != null) {
 
                 console.log("----");
-                console.log(i + ": " + registroscat[i] + " > " + (typeof registroscat[i] != "undefined" && registroscat[i] != "" && registroscat[i] != null))
-                separaregistros.push(registroscat[i]);
+                console.log(i + ": " + registroscat[i] + " > " + (typeof registroscat[i] != "undefined" && registroscat[i] != "undefined" && registroscat[i] != "" && registroscat[i] != null))
+                separaregistros[z].comissao = registroscat[i];
+                z++;
             }
         }
 
