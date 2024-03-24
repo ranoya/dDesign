@@ -31,14 +31,20 @@ let comiss = function (par) {
         console.table(categorias);
 
         let colunas = "";
+        let itemheads = `<div class="gridcom">`;
         let heads = `<span class="categoriacomis">`;
 
         for (let i = 0; i < categorias.length; i++) {
             colunas += "1fr ";
-            heads += `${categorias[i]}`;
+            heads += ` `;
+        }
+
+        for (let i = 0; i < categorias.length; i++){
+            itemheads += `<div>${categorias[i]}</div>`
         }
 
         heads += `</span>`;
+        itemheads += `</div>`;
 
         let xpto = `
         <style>
@@ -63,8 +69,14 @@ let comiss = function (par) {
             padding-bottom: 20px;
 
         }
+
+        .itemhead {
+
+        }
         </style>
         
+        ${itemheads}
+
         <div class="gridcom">
         
         ${heads}
@@ -83,6 +95,9 @@ let comiss = function (par) {
                 for (let i = 0; i < newarr.length; i++) {
 
                     patt = String(newarr[i].comissao);
+                    console.log("---");
+                    console.log(patt);
+
                     if (patt.match(categorias[c])) {
 
                         xpto += newarr[i].professor + "<br>";
