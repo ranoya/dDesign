@@ -70,7 +70,7 @@ let comiss = function (par) {
         ${heads}
         `;
 
-        
+        console.table(newarr);
 
         for (let c = 0; c < categorias.length; c++) {
             if (typeof categorias[c] != "undefined" && categorias[c] != "" && categorias[c] != null) {
@@ -80,7 +80,7 @@ let comiss = function (par) {
 
                 for (let i = 0; i < newarr.length; i++) {
 
-                    if (newarr[i].comissao.toString().match(categorias[c])) {
+                    if (newarr[i].comissao.match(categorias[c])) {
 
                         xpto += newarr[i].professor + "<br>";
 
