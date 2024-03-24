@@ -87,13 +87,14 @@ let comiss = function (par) {
         let patt = "";
 
         for (let c = 0; c < categorias.length; c++) {
-            if (typeof categorias[c] != "undefined" && categorias[c] != "" && categorias[c] != null) {
 
                 xpto += `<div>`;
 
 
-                for (let i = 0; i < newarr.length; i++) {
-
+            for (let i = 0; i < newarr.length; i++) {
+                    
+                if (typeof newarr[i].comissao != 'undefined' && newarr[i].comissao != 'undefined' && newarr[i].comissao != null && newarr[i].comissao != '') {
+                   
                     patt = String(newarr[i].comissao);
                     console.log("---");
                     console.log(patt);
@@ -106,9 +107,10 @@ let comiss = function (par) {
 
                 }
 
-                xpto += `</div>`;
-
             }
+
+            xpto += `</div>`;
+
         }
 
       xpto += `</div>`;
