@@ -10,7 +10,7 @@ let comiss = function (par) {
         let registroscat = unique(newarr, "comissao");
         let separaregistros = [];
         for (let i = 0; i < registroscat.length; i++) {
-            if (typeof registroscat != "undefined" && registroscat != "" && registroscat != null) {
+            if (typeof registroscat[i] != "undefined" && registroscat[i] != "" && registroscat[i] != null) {
                 separaregistros.push(registroscat[i]);
             }
         }
