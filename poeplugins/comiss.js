@@ -6,9 +6,17 @@ let comiss = function (par) {
     .then((response) => response.json())
     .then((dados) => {
         let newarr = select(dados, multipatterncheck_exclude, par);
+
+        let registroscat = unique(newarr, "comissao");
+        let separaregistros = [];
+        for (let i = 0; i < registroscat.length; i++) {
+            if (typeof registroscat != "undefined" && registroscat != "" && registroscat != null) {
+                separaregistros.push(registroscat[i]);
+            }
+        }
         
         
-        let categorias = tags(newarr, "comissao", ",");
+        let categorias = tags(separaregistros, "comissao", ",");
 
         let colunas = "";
         let heads = `<span class="categoriacomis">`;
