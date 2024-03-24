@@ -15,6 +15,7 @@ let comiss = function (par) {
 
                 console.log("----");
                 console.log(i + ": " + registroscat[i] + " > " + (typeof registroscat[i] != "undefined" && registroscat[i] != "undefined" && registroscat[i] != "" && registroscat[i] != null))
+                separaregistros[z] = {};
                 separaregistros[z].comissao = registroscat[i];
                 z++;
             }
