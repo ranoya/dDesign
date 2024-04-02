@@ -44,9 +44,9 @@ let atas = function (par) {
               
               if (typeof newarr[i].Link != 'undefined' && newarr[i].Link != null && newarr[i].Link != '') {
                  if (typeof newarr[i].Data != 'undefined' && newarr[i].Data != null && newarr[i].Data != '') {
-                     xpto += `<a class='atasdata' target='_blank' href='${newarr[i].Link}'>${newarr[i].Data}</a>`;
+                     xpto += `<a class='atasdata' target='_blank' href='${newarr[i].Link.replace(/\/view\?.*$/, "/preview")}'>${newarr[i].Data}</a>`;
                  } else {
-                     xpto += `<a class='atasdata' target='_blank' href='${newarr[i].Link}'>---</a>`;
+                     xpto += `<a class='atasdata' target='_blank' href='${newarr[i].Link.replace(/\/view\?.*$/, "/preview")}'>---</a>`;
                 }
               } else {
                 if (typeof newarr[i].Data != 'undefined' && newarr[i].Data != null && newarr[i].Data != '') {
