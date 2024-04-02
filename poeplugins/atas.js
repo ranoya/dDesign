@@ -26,14 +26,24 @@ let atas = function (par) {
             padding-bottom: 20px;
           }
 
+          .groupatas {
+                padding: 4px 8px 4px 8px;
+                margin: -4px -8px -4px -8px;
+                text-decoration: none;
+                color: var(--text-color, #bbbbbb);
+                font-size: 11px;
+                display: inline-block;
+                text-transform: uppercase;
+            }
+
           </style>
           
           <div class='gridatas'>
 
-          <div class="grouplink">DATA</div>
-          <div class="grouplink">PAUTA</div>
-          <div class="grouplink">DEFERIMENTOS</div>
-          <div class="grouplink">INDEFERIMENTOS</div>
+          <div class="groupatas">DATA</div>
+          <div class="groupatas">PAUTA</div>
+          <div class="groupatas">DEFERIMENTOS</div>
+          <div class="groupatas">INDEFERIMENTOS</div>
           `;
         
           let temlink = "";
