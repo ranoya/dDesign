@@ -31,15 +31,44 @@ let atas = function (par) {
           <div class='gridatas'>
           `;
         
+          let temlink = "";
           for (let i = 0; i < newarr.length; i++) {
               
               xpto += `
-                <span class='separaline'></span>
-                <a class='atasdata' target='_blank' href='${newarr[i].Link}'>${newarr[i].Data}</a>
-                <div class='ataspontos'>${newarr[i].Pontos.replace(/\n/g, "<br>")}</div>
-                <div class='atasdeferimentos'>${newarr[i].Deferimentos.replace(/\n/g, "<br>")}</div>
-                <div class='atasindeferimentos'>${newarr[i].Indeferimentos.replace(/\n/g, "<br>")}</div>
-              `;
+                <span class='separaline'></span>`;
+              
+              if (typeof newarr[i].Link != 'undefined' && newarr[i].Link != null && newarr[i].Link != '') {
+                 if (typeof newarr[i].Data != 'undefined' && newarr[i].Data != null && newarr[i].Data != '') {
+                     xpto += `<a class='atasdata' target='_blank' href='${newarr[i].Link}'>${newarr[i].Data}</a>`;
+                 } else {
+                     xpto += `<a class='atasdata' target='_blank' href='${newarr[i].Link}'>---</a>`;
+                }
+              } else {
+                if (typeof newarr[i].Data != 'undefined' && newarr[i].Data != null && newarr[i].Data != '') {
+                    xpto += `<div>${newarr[i].Data}</div>`;
+                } else {
+                     xpto += `<div>---</div>`;
+                }
+              }
+              
+              
+              if (typeof newarr[i].Pontos != 'undefined' && newarr[i].Pontos != null && newarr[i].Pontos != '') {
+                  xpto += `<div class='ataspontos'>${newarr[i].Pontos.replace(/\n/g, "<br>")}</div>`;
+              } else {
+                  xpto += `<div></div>`
+              }
+
+              if (typeof newarr[i].Deferimentos != 'undefined' && newarr[i].Deferimentos != null && newarr[i].Deferimentos != '') {
+                  xpto += `<div class='atasDeferimentos'>${newarr[i].Deferimentos.replace(/\n/g, "<br>")}</div>`;
+              } else {
+                  xpto += `<div></div>`
+              }
+
+              if (typeof newarr[i].Indeferimentos != 'undefined' && newarr[i].Indeferimentos != null && newarr[i].Indeferimentos != '') {
+                  xpto += `<div class='atasIndeferimentos'>${newarr[i].Indeferimentos.replace(/\n/g, "<br>")}</div>`;
+              } else {
+                  xpto += `<div></div>`
+              }
               
           }
 
