@@ -36,9 +36,9 @@ let atas = function (par) {
               xpto += `
                 <span class='separaline'></span>
                 <a class='atasdata' target='_blank' href='${newarr[i].Link}'>${newarr[i].Data}</a>
-                <div class='ataspontos'>${(newarr[i].Pontos).toString().replace(/\n/g, "<br>")}</div>
-                <div class='atasdeferimentos'>${(newarr[i].Deferimentos).toString().replace(/\n/g, "<br>")}</div>
-                <div class='atasindeferimentos'>${(newarr[i].Indeferimentos).toString().replace(/\n/g, "<br>")}</div>
+                <div class='ataspontos'>${newarr[i].Pontos.replace(/\n/g, "<br>")}</div>
+                <div class='atasdeferimentos'>${newarr[i].Deferimentos.replace(/\n/g, "<br>")}</div>
+                <div class='atasindeferimentos'>${newarr[i].Indeferimentos.replace(/\n/g, "<br>")}</div>
               `;
               
           }
