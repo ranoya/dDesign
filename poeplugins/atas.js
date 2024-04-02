@@ -29,6 +29,11 @@ let atas = function (par) {
           </style>
           
           <div class='gridatas'>
+
+          <div class="grouplink">DATA</div>
+          <div class="grouplink">PAUTA</div>
+          <div class="grouplink">DEFERIMENTOS</div>
+          <div class="grouplink">INDEFERIMENTOS</div>
           `;
         
           let temlink = "";
