@@ -18,7 +18,7 @@ let atas = function (par) {
 
           .gridatas {
             display: grid;
-            grid-template-columns: [init] 130px 1fr 1fr 1fr [ fim ];
+            grid-template-columns: [init] 130px 160px 1fr 1fr 1fr [ fim ];
             gap: 3px 10px;
             width: calc(100vw - 50px);
             margin-left: 20px;
@@ -41,6 +41,7 @@ let atas = function (par) {
           <div class='gridatas'>
 
           <div class="groupatas">DATA</div>
+          <div class="groupatas">ÓRGÃO</div>
           <div class="groupatas">PAUTA</div>
           <div class="groupatas">DEFERIMENTOS</div>
           <div class="groupatas">INDEFERIMENTOS</div>
@@ -65,7 +66,16 @@ let atas = function (par) {
                      xpto += `<div>---</div>`;
                 }
               }
-              
+            
+              if (
+                typeof newarr[i].Unidade != "undefined" &&
+                newarr[i].Unidade != null &&
+                newarr[i].Unidade != ""
+              ) {
+                xpto += `<div>${newarr[i].Unidade}</div>`;
+              } else {
+                xpto += `<div></div>`;
+              }
               
               if (typeof newarr[i].Pontos != 'undefined' && newarr[i].Pontos != null && newarr[i].Pontos != '') {
                   xpto += `<div class='ataspontos'>${newarr[i].Pontos.replace(/\n/g, "<br>")}</div>`;
