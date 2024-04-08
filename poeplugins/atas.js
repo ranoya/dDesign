@@ -76,7 +76,7 @@ let atas = function (par) {
               }
               
               if (typeof newarr[i].Pontos != 'undefined' && newarr[i].Pontos != null && newarr[i].Pontos != '') {
-                  xpto += `<div class='ataspontos'>${newarr[i].Pontos.replace(/\n/g, "<br>")}</div>`;
+                  xpto += `<div class='ataspontos'>${newarr[i].Pontos.replace(/";"/g, "<br>")}</div>`;
               } else {
                   xpto += `<div></div>`
               }
