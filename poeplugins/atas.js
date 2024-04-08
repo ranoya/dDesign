@@ -76,19 +76,19 @@ let atas = function (par) {
               }
               
               if (typeof newarr[i].Pontos != 'undefined' && newarr[i].Pontos != null && newarr[i].Pontos != '') {
-                  xpto += `<div class='ataspontos'>${newarr[i].Pontos.replace(/";"/g, "<br>")}</div>`;
+                  xpto += `<div class='ataspontos'>${newarr[i].Pontos.replace(/;/g, "<br>")}</div>`;
               } else {
                   xpto += `<div></div>`
               }
 
               if (typeof newarr[i].Deferimentos != 'undefined' && newarr[i].Deferimentos != null && newarr[i].Deferimentos != '') {
-                  xpto += `<div class='atasDeferimentos'>${newarr[i].Deferimentos.replace(/\n/g, "<br>")}</div>`;
+                  xpto += `<div class='atasDeferimentos'>${newarr[i].Deferimentos.replace(/;/g, "<br>")}</div>`;
               } else {
                   xpto += `<div></div>`
               }
 
               if (typeof newarr[i].Indeferimentos != 'undefined' && newarr[i].Indeferimentos != null && newarr[i].Indeferimentos != '') {
-                  xpto += `<div class='atasIndeferimentos'>${newarr[i].Indeferimentos.replace(/\n/g, "<br>")}</div>`;
+                  xpto += `<div class='atasIndeferimentos'>${newarr[i].Indeferimentos.replace(/;/g, "<br>")}</div>`;
               } else {
                   xpto += `<div></div>`
               }
