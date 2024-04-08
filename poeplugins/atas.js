@@ -1,10 +1,8 @@
 let atas = function (par) {
-
-  fetch(
-    `https://opensheet.elk.sh/1lncqczCIBX0fl9O0XpDt_ogiqQW5iZUKX-kqH6yHNVQ/ATAS`
-  )
-    .then((response) => response.json())
-      .then((dados) => {
+    
+    let jsonfile = `https://docs.google.com/spreadsheets/d/1lncqczCIBX0fl9O0XpDt_ogiqQW5iZUKX-kqH6yHNVQ/edit#gid=55426927`;
+    
+    getcsvdata(GoogleSheetCsvURL(jsonfile), function (dados) {
         
           dados.reverse();
         

@@ -1,10 +1,9 @@
 let comiss = function (par) {
 
-  fetch(
-    `https://opensheet.elk.sh/1lncqczCIBX0fl9O0XpDt_ogiqQW5iZUKX-kqH6yHNVQ/GRUPOS`
-  )
-    .then((response) => response.json())
-    .then((dados) => {
+  let jsonfile = `https://docs.google.com/spreadsheets/d/1lncqczCIBX0fl9O0XpDt_ogiqQW5iZUKX-kqH6yHNVQ/edit#gid=1858811885`;
+    
+    getcsvdata(GoogleSheetCsvURL(jsonfile), function (dados) {
+        
         let newarr = select(dados, multipatterncheck_exclude, par);
 
         let registroscat = unique(newarr, "comissao");
