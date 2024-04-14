@@ -1,4 +1,4 @@
-let nucleos = function (par) {
+let cppd = function (par) {
 
   let jsonfile = `https://docs.google.com/spreadsheets/d/1tOhc22AxUFcwH6AZ1GcUvmTTYpCTJw6UB-3uUg8Cuzc/edit#gid=0`;
     
