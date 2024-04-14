@@ -55,7 +55,7 @@ let cppd = function (par) {
             padding-top: 5px;
             padding-bottom: 5px;
             margin-top: -5px;
-            marrgin-bottom: -5px;
+            margin-bottom: -5px;
             text-decoration: none !important;
 
         }
@@ -140,7 +140,7 @@ let cppd = function (par) {
         for (let p = pautas.length - 1; p >= 0; p--) {
             code += `<div class='pulalinha'></div>`;
 
-            code += `<div class='datapadding datamenor'>${pautas[p].Data}</div>`;
+            code += `<div class='datapadding datamenor' style='padding-left: 0 !important;'>${pautas[p].Data}</div>`;
 
             code += `<div>${pautas[p].Titulo}<br></div>`;
 
