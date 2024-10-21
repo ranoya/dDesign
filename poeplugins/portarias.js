@@ -39,6 +39,7 @@ let portarias = function (par) {
                 color: var(--text-color, #bbbbbb);
                 text-transform: uppercase;
                 font-size: 11px;
+                padding-left: 8px;
           }
 
           .separalinks {
