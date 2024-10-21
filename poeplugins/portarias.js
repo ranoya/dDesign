@@ -11,7 +11,7 @@ let portarias = function (par) {
           
           <style>
 
-          .grihead {
+          .gridth {
             display: grid;
             grid-template-columns: [init] 1fr 1.5fr 2fr [ fim ];
             gap: 3px 10px;
@@ -38,16 +38,21 @@ let portarias = function (par) {
                 font-size: 11px;
           }
 
-          .separaline {
-                grid-column: init/fim;
+          .separalinks {
+                display: block;
+                width: calc(100vw - 35px);
+                margin: 0;
+                margin-right: 20px;
+                margin-left: 20px;
                 height: 1px;
                 border-bottom: 1px solid var(--line-separator, #dddddd);
                 color: var(--text-color, #bbbbbb);
+                
           }
 
           </style>
           
-          <div class='gridhead'>
+          <div class='gridth'>
 
           <div class="ithead">PORTARIA</div>
           <div class="ithead">PROFESSOR</div>
@@ -59,7 +64,7 @@ let portarias = function (par) {
     let temlink = "";
     for (let i = 0; i < newarr.length; i++) {
       xpto += `
-                <span class='separaline'></span>`;
+                <span class='separalinks'></span>`;
 
       if (
         typeof newarr[i].Link != "undefined" &&
@@ -83,7 +88,7 @@ let portarias = function (par) {
     }
 
     xpto += `
-          <span class='separaline'></span>
+          <span class='separalinks'></span>
           
           `;
 
