@@ -29,6 +29,9 @@ let portarias = function (par) {
             margin-left: 20px;
             margin-right: 20px;
             padding-bottom: 20px;
+            padding-top: 20px;
+            margin-bottom: 1px;
+            margin-top: 2px;
           }
 
           .ithead {
