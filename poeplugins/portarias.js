@@ -25,9 +25,9 @@ let portarias = function (par) {
             display: grid;
             grid-template-columns: [init] 1fr 1.5fr 2fr [ fim ];
             gap: 3px 10px;
-            width: calc(100vw - 50px);
+            width: calc(100vw - 55px);
             margin-left: 20px;
-            margin-right: 20px;
+            margin-right: 19px;
             padding-bottom: 20px;
             padding-top: 20px;
             margin-bottom: 1px;
@@ -44,7 +44,7 @@ let portarias = function (par) {
 
           .separalinks {
                 display: block;
-                width: calc(100vw - 35px);
+                width: calc(100vw - 40px);
                 margin: 0;
                 margin-right: 20px;
                 margin-left: 20px;
